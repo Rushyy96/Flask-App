@@ -14,30 +14,42 @@
     <link rel="stylesheet" href="../static/styles/general.css">
     <link rel="stylesheet" href="../static/styles/header.css">
     <link rel="stylesheet" href="../static/styles/sidebar.css">
-
-
   </head>
   <body>
-
     <div class="header">
+      <a class="navbar-brand" href="/">
+        <span class="blue">My App</span>
+      </a>
+        <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
       <div class="header-left">
         <nav>
-          <li class="menu">
-            <a href="/" style="text-decoration: none;">Home</a>
-          </li>
-          <li class="menu">
-            <a href="/about" style="text-decoration: none;">About</a>
-          </li>
-          <li class="menu">
-            <a href="/sign-up" style="text-decoration: none;">Sign Up</a>
-          </li>
-          <li class="menu">
-            <a href="/login" style="text-decoration: none;">Log In</a>
-          </li>
+          {% if session["user_id"] %}
+            <li class="menu">
+              <a href="/home" style="text-decoration: none;">Home</a>
+            </li>
+            <li class="menu">
+              <a href="/about" style="text-decoration: none;">About</a>
+            </li>
+            <li class="menu">
+              <a href="/change_password">Change Password</a>
+            </li>
+            <li class="menu">
+              <a href="/logout">Log Out</a>
+            </li>
+          {% else %}
+            <li class="menu">
+              <a href="/login">Log In</a>
+            </li>
+            <li class="menu">
+              <a href="/register">Register</a>
+            </li>
+          {% endif %}
         </nav>
       </div>
       <div class="header-right">
-        <i class="fab fa-github-square fa-2xl" id="github" aria-hidden="true"></i></i>
+        <i class="fab fa-github-square fa-2xl" id="github" aria-hidden="true"></i>
         <i class="fab fa-linkedin fa-2xl" id="linkedin" aria-hidden="true"></i>  
       </div>
     </div>
