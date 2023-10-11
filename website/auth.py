@@ -21,13 +21,13 @@ def login():
         user = User.query.filter_by(email=email).first()
         if user:
             if check_password_hash(user.password, password):
-                flash('Logged in successfully!', category='success')
+                flash('Logged In Successfully!', category='success')
                 login_user(user, remember=True)
                 return redirect(url_for('views.home'))
             else:
-                flash('Incorrect password!', category='error')
+                flash('Incorrect Password!', category='error')
         else:
-            flash('Account with this email does not exist', category='error')
+            flash('An account with this email does not exist', category='error')
 
     return render_template("login.html")
 
@@ -43,12 +43,12 @@ def sign_up():
         user = User.query.filter_by(email=email).first()
 
         if user:
-            flash('This Email already exists.', category='error')
+            flash('A user with this email already exists.', category='error')
             return redirect(url_for("auth.sign_up"))
         if len(email) < 4:
             flash('Email must be greater than 3 characters.', category='error')
         elif len(name) < 2:
-            flash('Name must be greater than 1 characters.', category='error')
+            flash('Please input your name', category='error')
         elif password1 != password2:
             flash('Passwords do not match.', category='error')
         elif len(password1) < 7:
