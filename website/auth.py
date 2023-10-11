@@ -9,7 +9,7 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/')
 def root():
-    return render_template("layout.html")
+    return redirect('/login')
 
 
 @auth.route("/login", methods=["GET", "POST"])
@@ -29,7 +29,7 @@ def login():
         else:
             flash('An account with this email does not exist', category='error')
 
-    return render_template("login.html")
+    return render_template("login.html", user=current_user)
 
 
 @auth.route('/register', methods=['GET', 'POST'])
@@ -62,7 +62,7 @@ def sign_up():
             return redirect(url_for("views.home"))
 
             
-    return render_template("register.html")
+    return render_template("register.html", user=current_user)
 
 
 @auth.route('/logout')

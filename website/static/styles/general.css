@@ -3,3 +3,9 @@ body
     margin: 100px 80px;
 }
 
+a, a:hover
+{
+    color: white;
+    text-decoration: none;
+}
+

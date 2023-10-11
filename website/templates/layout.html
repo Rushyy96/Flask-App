@@ -24,7 +24,7 @@
         </button>
       <div class="header-left">
         <nav>
-          {% if user_loader %}
+          {% if user.is_authenticated %}
             <li class="menu">
               <a href="/home" style="text-decoration: none;">Home</a>
             </li>
@@ -34,6 +34,9 @@
             <li class="menu">
               <a href="/change_password">Change Password</a>
             </li>
+            <li class="menu">
+              <a href="/logout">Log Out</a>
+            </li>
           {% else %}
           <li class="menu">
             <a href="/register">Register</a>
@@ -41,9 +44,7 @@
             <li class="menu">
               <a href="/login">Log In</a>
             </li>
-            <li class="menu">
-              <a href="/logout">Log Out</a>
-            </li>
+           
           {% endif %}
         </nav>
       </div>
