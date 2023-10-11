@@ -23,19 +23,27 @@
       <div class="header-left">
         <nav>
           <li class="menu">
-            <a href="index.html" style="text-decoration: none;">Home</a>
+            <a href="/" style="text-decoration: none;">Home</a>
           </li>
           <li class="menu">
-            <a href="about_me.html" style="text-decoration: none;">About Me</a>
+            <a href="/about" style="text-decoration: none;">About</a>
           </li>
           <li class="menu">
-            <a href="portfolio.html" style="text-decoration: none;">Portfolio</a>
+            <a href="/sign-up" style="text-decoration: none;">Sign Up</a>
           </li>
           <li class="menu">
-            <a href="contact.html" style="text-decoration: none;">Contact</a>
+            <a href="/login" style="text-decoration: none;">Log In</a>
           </li>
         </nav>
       </div>
+      <div class="header-right">
+        <i class="fab fa-github-square fa-2xl" id="github" aria-hidden="true"></i></i>
+        <i class="fab fa-linkedin fa-2xl" id="linkedin" aria-hidden="true"></i>  
+      </div>
+    </div>
+
+      {% block content %}
+      {% endblock %}
 
 
 
