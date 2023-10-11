@@ -1,4 +1,4 @@
-from website import create_app, login_required
+from website import create_app
 from flask import Flask, session
 
 

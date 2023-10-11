@@ -16,7 +16,7 @@
   </head>
   <body>
     <div class="header">
-      <a class="navbar-brand" href="/">
+      <a class="navbar-brand" href="/home">
         <span class="blue">My App</span>
       </a>
         <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
@@ -24,7 +24,7 @@
         </button>
       <div class="header-left">
         <nav>
-          {% if session["user_id"] %}
+          {% if user_loader %}
             <li class="menu">
               <a href="/home" style="text-decoration: none;">Home</a>
             </li>
@@ -34,15 +34,15 @@
             <li class="menu">
               <a href="/change_password">Change Password</a>
             </li>
-            <li class="menu">
-              <a href="/logout">Log Out</a>
-            </li>
           {% else %}
+          <li class="menu">
+            <a href="/register">Register</a>
+          </li>
             <li class="menu">
               <a href="/login">Log In</a>
             </li>
             <li class="menu">
-              <a href="/register">Register</a>
+              <a href="/logout">Log Out</a>
             </li>
           {% endif %}
         </nav>
